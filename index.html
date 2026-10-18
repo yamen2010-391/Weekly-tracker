@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101116">
+  <meta name="description" content="Dragonknight Archive weekly TYT performance and quota tracker.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Weekly Performance & Quota Tracker</title>
+<style>
+:root{--bg:#0c0d11;--panel:#14161d;--panel2:#191c25;--line:#292d39;--text:#f3f4f8;--muted:#9ba2b3;--accent:#c6f36b;--accent2:#91bd39;--danger:#ff7777;--radius:18px;--shadow:0 18px 55px #0005}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#26301c 0,transparent 38%),radial-gradient(ellipse at 100% 0%,#22243a 0,transparent 30%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 56px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}.brand{display:flex;gap:12px;align-items:center}.mark{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--accent);color:#15180f;font-weight:950;font-size:21px;box-shadow:0 6px 22px #c6f36b24}.eyebrow{color:var(--accent);font-size:11px;letter-spacing:.18em;font-weight:800;text-transform:uppercase}.brand h1{font-size:clamp(20px,3vw,28px);margin:2px 0 0;letter-spacing:-.04em}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#1a1c24;color:var(--text);padding:10px 13px;border-radius:11px;font-weight:700;font-size:13px;transition:transform .16s,border-color .16s,background .16s}.btn:hover{transform:translateY(-1px);border-color:#656d7d}.btn.primary{background:var(--accent);color:#15180f;border-color:var(--accent)}.btn.danger{color:#ff9b9b;border-color:#613a42}.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-bottom:16px}.panel{background:linear-gradient(145deg,#191b23,#12141a);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);min-width:0}.hero h2{font-size:clamp(25px,4vw,39px);letter-spacing:-.055em;line-height:1.08;margin:8px 0 10px}.sub{color:var(--muted);margin:0}.fieldgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.field label,.field-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:800;margin:0 0 6px}.input{width:100%;min-width:0;background:#0f1117;border:1px solid #303441;border-radius:10px;padding:11px 12px;color:var(--text)}.input::placeholder{color:#626979}.input:focus{border-color:var(--accent)}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#101218;border:1px solid var(--line);border-radius:14px;padding:15px}.stat .num{font-size:28px;letter-spacing:-.04em;font-weight:850}.stat .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.progress-track{height:8px;border-radius:99px;background:#292d36;overflow:hidden;margin-top:10px}.progress-fill{height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s ease}.stat small{display:block;color:var(--muted);margin-top:7px}.section{margin-top:16px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2{margin:0;font-size:17px;letter-spacing:-.02em}.section-head p{margin:3px 0 0;color:var(--muted);font-size:12px}.tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--accent);border:1px solid #3e4d2c;background:#20291a;padding:6px 9px;border-radius:99px;white-space:nowrap}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{border-collapse:collapse;width:100%;min-width:660px}th{text-align:left;color:#9ba2b3;background:#101218;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:850}th,td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:middle}tr:last-child td{border-bottom:0}td:first-child{font-weight:750}td .input{padding:9px 10px}.num-input{max-width:120px}.checkcell{text-align:center;width:74px}.check{appearance:none;width:20px;height:20px;border:1px solid #505667;border-radius:6px;background:#0e1015;display:inline-grid;place-items:center;vertical-align:middle;cursor:pointer}.check:checked{background:var(--accent);border-color:var(--accent)}.check:checked:after{content:"✓";font-size:14px;font-weight:950;color:#11150b}.subject-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.subject{background:#101218;border:1px solid var(--line);border-radius:14px;padding:14px}.subject-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.subject h3{font-size:14px;margin:0}.subject .input{margin-top:8px}.days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.day{border:1px solid var(--line);background:#101218;border-radius:14px;padding:13px;min-width:0}.dayhead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.dayhead strong{font-size:13px}.day .input{margin-bottom:8px}.day .input:last-child{margin-bottom:0}.daynums{display:grid;grid-template-columns:1fr 1fr;gap:8px}.daynums .input{margin-bottom:8px}.notes{min-height:90px;resize:vertical}.footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:22px}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#e7f7cb;color:#1b2410;padding:11px 16px;border-radius:12px;font-weight:800;box-shadow:var(--shadow);transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}.save-state{color:var(--muted);font-size:12px}.inline-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.hidden{display:none!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.fieldgrid{grid-template-columns:1fr}.subject-grid,.days{grid-template-columns:1fr}.wrap{padding:18px 12px 40px}.panel{padding:15px}.topbar{align-items:flex-start}.actions{width:100%}.actions .btn{flex:1}.section-head{align-items:flex-start}.stats{grid-template-columns:1fr 1fr}}
+@media print{body{background:white;color:#111}.wrap{max-width:none;padding:0}.topbar .actions,.no-print,.btn,.toast{display:none!important}.panel,.subject,.day{box-shadow:none;background:white;border-color:#bbb;color:#111;break-inside:avoid}.hero{grid-template-columns:1.3fr 1fr}.input{background:white;color:#111;border:0;border-bottom:1px solid #aaa;border-radius:0;padding:4px 2px}.sub,.section-head p,.field label,.field-label,.stat .label,.stat small,.footer-note,.eyebrow{color:#555}.stat{background:white;border-color:#bbb}.stat .num{font-size:20px}.progress-track{background:#ddd}.progress-fill{background:#777}th{background:#eee;color:#333}td,th{padding:7px;border-color:#ccc}.section{margin-top:10px}.panel{padding:12px}.hero h2{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand"><div class="mark">D</div><div><div class="eyebrow">Dragonknight Archive</div><h1>Weekly Performance Tracker</h1></div></div>
+    <div class="actions no-print">
+      <button class="btn" id="shareBtn">Share / Export</button>
+      <button class="btn" id="backupBtn">Backup data</button>
+      <button class="btn primary" id="printBtn">Print / Save PDF</button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="panel">
+      <div class="eyebrow">Execution protocol / weekly review</div>
+      <h2>Make the work visible.<br><span style="color:var(--accent)">Own the week.</span></h2>
+      <p class="sub">A private, offline-friendly tracker for your TYT routine. Your edits are saved automatically on this device.</p>
+      <div class="fieldgrid">
+        <div class="field"><label for="week">Week number / dates</label><input class="input" id="week" data-key="week" placeholder="Week 1 · Oct 19–25"></div>
+        <div class="field"><label for="targetNet">Target net score</label><input class="input" id="targetNet" data-key="targetNet" type="number" min="0" step=".1" placeholder="65.0"></div>
+        <div class="field"><label for="actualNet">Actual deneme net</label><input class="input" id="actualNet" data-key="actualNet" type="number" min="0" step=".1" placeholder="60.0"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="section-head"><div><div class="eyebrow">Live dashboard</div><h2 style="margin-top:4px">This week's pulse</h2></div><span class="tag" id="statusTag">In progress</span></div>
+      <div class="stats">
+        <div class="stat"><div class="label">Paragraphs</div><div class="num" id="paraStat">0 / 120</div><div class="progress-track"><div class="progress-fill" id="paraBar"></div></div><small id="paraSmall">0% of weekly goal</small></div>
+        <div class="stat"><div class="label">Geometry</div><div class="num" id="geoStat">0 / 100</div><div class="progress-track"><div class="progress-fill" id="geoBar"></div></div><small id="geoSmall">0% of weekly goal</small></div>
+        <div class="stat"><div class="label">Daily actions</div><div class="num" id="dayStat">0 / 7</div><div class="progress-track"><div class="progress-fill" id="dayBar"></div></div><small>Days with at least one action noted</small></div>
+        <div class="stat"><div class="label">Net difference</div><div class="num" id="netDiff">—</div><small>Actual score compared with target</small></div>
+      </div>
+    </div>
+  </section>
+  <section class="section panel">
+    <div class="section-head"><div><h2>01 / Weekly core quotas</h2><p>Set targets, enter your completed counts, and tick off finished tasks.</p></div><span class="tag">Core quotas</span></div>
+    <div class="table-wrap"><table><thead><tr><th>Metric / quota goal</th><th>Target budget</th><th>Completed</th><th class="checkcell">Done</th></tr></thead><tbody>
+      <tr><td>Paragraph questions</td><td><input class="input num-input" type="number" min="0" data-key="paraTarget" value="120" aria-label="Paragraph target"></td><td><input class="input num-input" type="number" min="0" data-key="paraDone" value="0" aria-label="Paragraph completed"></td><td class="checkcell"><input class="check" type="checkbox" data-key="paraChecked" aria-label="Paragraph quota done"></td></tr>
+      <tr><td>Geometry questions</td><td><input class="input num-input" type="number" min="0" data-key="geoTarget" value="100" aria-label="Geometry target"></td><td><input class="input num-input" type="number" min="0" data-key="geoDone" value="0" aria-label="Geometry completed"></td><td class="checkcell"><input class="check" type="checkbox" data-key="geoChecked" aria-label="Geometry quota done"></td></tr>
+      <tr><td>School homework</td><td><input class="input" data-key="homeworkTarget" value="100% cleared" aria-label="Homework target"></td><td><input class="input" data-key="homeworkDone" placeholder="e.g. All cleared" aria-label="Homework completed"></td><td class="checkcell"><input class="check" type="checkbox" data-key="homeworkChecked" aria-label="Homework done"></td></tr>
+    </tbody></table></div>
+  </section>
+  <section class="section panel">
+    <div class="section-head"><div><h2>02 / Saturday subject review</h2><p>Record topics covered, notes, and practice volume.</p></div><span class="tag">TYT mastery</span></div>
+    <div class="subject-grid" id="subjects">
+      <article class="subject"><div class="subject-top"><h3>Biology</h3><input class="check" type="checkbox" data-key="subBioDone" aria-label="Biology reviewed"></div><input class="input" data-key="subBioTopic" placeholder="Topic / module covered"><input class="input" data-key="subBioNotes" placeholder="Notes / question count"></article>
+      <article class="subject"><div class="subject-top"><h3>Physics</h3><input class="check" type="checkbox" data-key="subPhysicsDone" aria-label="Physics reviewed"></div><input class="input" data-key="subPhysicsTopic" placeholder="Topic / module covered"><input class="input" data-key="subPhysicsNotes" placeholder="Notes / question count"></article>
+      <article class="subject"><div class="subject-top"><h3>Chemistry</h3><input class="check" type="checkbox" data-key="subChemDone" aria-label="Chemistry reviewed"></div><input class="input" data-key="subChemTopic" placeholder="Topic / module covered"><input class="input" data-key="subChemNotes" placeholder="Notes / question count"></article>
+      <article class="subject"><div class="subject-top"><h3>Geography</h3><input class="check" type="checkbox" data-key="subGeoDone" aria-label="Geography reviewed"></div><input class="input" data-key="subGeoTopic" placeholder="Topic / module covered"><input class="input" data-key="subGeoNotes" placeholder="Notes / question count"></article>
+      <article class="subject"><div class="subject-top"><h3>History</h3><input class="check" type="checkbox" data-key="subHistoryDone" aria-label="History reviewed"></div><input class="input" data-key="subHistoryTopic" placeholder="Topic / module covered"><input class="input" data-key="subHistoryNotes" placeholder="Notes / question count"></article>
+      <article class="subject"><div class="subject-top"><h3>Math / Geometry focus</h3><input class="check" type="checkbox" data-key="subMathDone" aria-label="Math and geometry reviewed"></div><input class="input" data-key="subMathTopic" placeholder="Focus area / module covered"><input class="input" data-key="subMathNotes" placeholder="Total questions / notes"></article>
+    </div>
+  </section>
+  <section class="section panel">
+    <div class="section-head"><div><h2>03 / Day-by-day execution log</h2><p>Enter daily totals and the main action. A day counts when you add a note.</p></div><span class="tag">Daily tracking</span></div>
+    <div class="days" id="days">
+    </div>
+  </section>
+  <section class="section panel">
+    <div class="section-head"><div><h2>04 / Sunday reset & coach review</h2><p>Use this section to identify wins, bottlenecks, and the next adjustment.</p></div><span class="tag">Weekly audit</span></div>
+    <div class="fieldgrid" style="margin-top:0">
+      <div class="field"><label for="wins">Wins this week</label><textarea class="input notes" id="wins" data-key="wins" placeholder="What worked? What improved?"></textarea></div>
+      <div class="field"><label for="bottlenecks">Bottlenecks</label><textarea class="input notes" id="bottlenecks" data-key="bottlenecks" placeholder="What slowed you down?"></textarea></div>
+      <div class="field"><label for="nextWeek">Next week's adjustment</label><textarea class="input notes" id="nextWeek" data-key="nextWeek" placeholder="One or two specific changes"></textarea></div>
+    </div>
+    <div class="field" style="margin-top:12px"><label for="coachNotes">Coach report / extra notes</label><textarea class="input notes" id="coachNotes" data-key="coachNotes" placeholder="Raw numbers, questions, or anything to report"></textarea></div>
+  </section>
+  <section class="section panel no-print">
+    <div class="section-head"><div><h2>Data & privacy controls</h2><p>No account or internet connection required. Data stays in this browser unless you export or share it.</p></div><span class="tag">Your control</span></div>
+    <div class="inline-actions">
+      <button class="btn" id="exportJson">Export backup (.json)</button>
+      <button class="btn" id="exportCsv">Export table (.csv)</button>
+      <button class="btn" id="importBtn">Restore backup</button><input type="file" id="importFile" accept=".json,application/json" class="hidden">
+      <button class="btn danger" id="clearBtn">Clear this week</button>
+      <span class="save-state" id="saveState" role="status">Saved locally</span>
+    </div>
+    <p class="sub" style="font-size:12px;margin-top:12px">Tip: export a JSON backup before clearing or changing devices. “Clear this week” resets the current form after confirmation; it does not delete files you have already exported or shared.</p>
+  </section>
+  <p class="footer-note">DRAGONKNIGHT ARCHIVE · TYT EXECUTION TRACK · Built for focus, flexibility, and weekly resets.</p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+'use strict';
+const STORAGE_KEY='dragonknight-weekly-tracker-v1';
+const dayNames=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const dayHints=['School work, deneme, daily focus…','Daily routine & homework…','Daily routine & homework…','Daily routine & homework…','Closing out weekly school tasks…','TYT day & subject reviews…','Reset, final quotas & reward…'];
+const daysRoot=document.getElementById('days');
+daysRoot.innerHTML=dayNames.map((day,i)=>`<article class="day"><div class="dayhead"><strong>${day}</strong><input class="check" type="checkbox" data-key="day${i}Checked" aria-label="${day} complete"></div><div class="daynums"><div><label class="field-label">Paragraphs</label><input class="input" type="number" min="0" data-key="day${i}Para" value="0" aria-label="${day} paragraph count"></div><div><label class="field-label">Geometry</label><input class="input" type="number" min="0" data-key="day${i}Geo" value="0" aria-label="${day} geometry count"></div></div><textarea class="input" rows="2" data-key="day${i}Notes" placeholder="${dayHints[i]}" aria-label="${day} actions and focus notes"></textarea></article>`).join('');
+const fields=[...document.querySelectorAll('[data-key]')];
+const defaults={paraTarget:'120',paraDone:'0',geoTarget:'100',geoDone:'0',homeworkTarget:'100% cleared',homeworkDone:''};
+let state={};
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2200)}
+function val(key){const el=fields.find(f=>f.dataset.key===key);return el?el.value:''}
+function num(key){return Math.max(0,Number(val(key))||0)}
+function checked(key){const el=fields.find(f=>f.dataset.key===key);return !!(el&&el.checked)}
+function updateDash(){
+ const p=num('paraDone'),pt=num('paraTarget'),g=num('geoDone'),gt=num('geoTarget');
+ document.getElementById('paraStat').textContent=`${p} / ${pt}`;document.getElementById('geoStat').textContent=`${g} / ${gt}`;
+ const pp=pt?Math.min(100,p/pt*100):0,gp=gt?Math.min(100,g/gt*100):0;
+ document.getElementById('paraBar').style.width=pp+'%';document.getElementById('geoBar').style.width=gp+'%';
+ document.getElementById('paraSmall').textContent=Math.round(pp)+'% of weekly goal';document.getElementById('geoSmall').textContent=Math.round(gp)+'% of weekly goal';
+ let active=0;for(let i=0;i<7;i++){if(val(`day${i}Notes`).trim()||num(`day${i}Para`)>0||num(`day${i}Geo`)>0||checked(`day${i}Checked`))active++}
+ document.getElementById('dayStat').textContent=`${active} / 7`;document.getElementById('dayBar').style.width=(active/7*100)+'%';
+ const t=val('targetNet'),a=val('actualNet'),diff=document.getElementById('netDiff');
+ if(t!==''&&a!==''){const d=Number(a)-Number(t);diff.textContent=(d>0?'+':'')+d.toFixed(1);diff.style.color=d>=0?'var(--accent)':'var(--danger)'}else{diff.textContent='—';diff.style.color='var(--text)'}
+ const all=checked('paraChecked')&&checked('geoChecked')&&checked('homeworkChecked');
+ const tag=document.getElementById('statusTag');tag.textContent=all?'Quotas complete':'In progress';tag.style.color=all?'#c6f36b':'';
+}
+function snapshot(){const obj={schema:1,exportedAt:new Date().toISOString(),data:{}};fields.forEach(el=>{obj.data[el.dataset.key]=el.type==='checkbox'?el.checked:el.value});return obj}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(snapshot().data));document.getElementById('saveState').textContent='Saved locally · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}catch(e){document.getElementById('saveState').textContent='Autosave unavailable — export a backup'}updateDash()}
+function loadData(data){fields.forEach(el=>{const k=el.dataset.key;if(data&&Object.prototype.hasOwnProperty.call(data,k)){if(el.type==='checkbox')el.checked=!!data[k];else el.value=data[k]}});updateDash()}
+try{const saved=localStorage.getItem(STORAGE_KEY);if(saved)loadData(JSON.parse(saved));else loadData(defaults)}catch(e){loadData(defaults)}
+fields.forEach(el=>el.addEventListener('input',save));fields.filter(el=>el.type==='checkbox').forEach(el=>el.addEventListener('change',save));
+function download(name,content,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+function exportJson(){download('dragonknight-weekly-tracker-backup.json',JSON.stringify(snapshot(),null,2),'application/json');toast('Backup exported')}
+function csvEscape(v){return '"'+String(v??'').replace(/"/g,'""')+'"'}
+function exportCsv(){const s=snapshot().data;const rows=[['Section','Field','Value']];fields.forEach(el=>rows.push([el.closest('.day')?'Daily log':el.closest('.subject')?'Subject review':el.closest('table')?'Core quota':el.closest('.hero')?'Weekly overview':'Weekly review',el.getAttribute('aria-label')||el.dataset.key,el.type==='checkbox'?(el.checked?'Done':'Not done'):el.value]));download('dragonknight-weekly-tracker.csv','\ufeff'+rows.map(r=>r.map(csvEscape).join(',')).join('\r\n'),'text/csv;charset=utf-8');toast('CSV exported')}
+document.getElementById('exportJson').addEventListener('click',exportJson);document.getElementById('backupBtn').addEventListener('click',exportJson);document.getElementById('exportCsv').addEventListener('click',exportCsv);
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+document.getElementById('shareBtn').addEventListener('click',async()=>{const s=snapshot();const file=new File([JSON.stringify(s,null,2)],'dragonknight-weekly-tracker-backup.json',{type:'application/json'});if(navigator.share){try{if(!navigator.canShare||navigator.canShare({files:[file]})){await navigator.share({title:'Weekly Performance Tracker backup',text:'My weekly tracker data backup',files:[file]});return}}catch(e){if(e.name==='AbortError')return}}exportJson();toast('Backup downloaded — attach it in any sharing app')});
+document.getElementById('clearBtn').addEventListener('click',()=>{if(!confirm('Clear all entries for this week on this device? Export a backup first if you may need these entries later.'))return;fields.forEach(el=>{if(el.type==='checkbox')el.checked=false;else el.value=Object.prototype.hasOwnProperty.call(defaults,el.dataset.key)?defaults[el.dataset.key]:(['paraTarget','geoTarget'].includes(el.dataset.key)?'0':(['paraDone','geoDone'].includes(el.dataset.key)?'0':''))});save();toast('This week has been cleared')});
+const fileInput=document.getElementById('importFile');document.getElementById('importBtn').addEventListener('click',()=>fileInput.click());fileInput.addEventListener('change',async()=>{const file=fileInput.files[0];if(!file)return;try{const parsed=JSON.parse(await file.text());const data=parsed.data||parsed;if(!data||typeof data!=='object')throw new Error('bad file');if(!confirm('Restore this backup and replace the current entries?'))return;loadData(data);save();toast('Backup restored')}catch(e){alert('Could not read that backup. Choose a JSON backup exported by this tracker.')}finally{fileInput.value=''}});
+updateDash();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{})); }
+})();
+</script>
+</body>
+</html>
